@@ -1,0 +1,11 @@
+{"user_id":"u123","event_time":"2026-03-10T10:21:00.000Z","bid_count":1,"bid_velocity_last_10_min":0.1,"is_timer_event":false}
+{"user_id":"u123","event_time":"2026-03-10T10:22:00.000Z","bid_count":2,"bid_velocity_last_10_min":0.2,"is_timer_event":false}
+{"user_id":"u123","event_time":"2026-03-10T10:23:00.000Z","bid_count":3,"bid_velocity_last_10_min":0.3,"is_timer_event":false}
+{"user_id":"u456","event_time":"2026-03-10T10:21:30.000Z","bid_count":1,"bid_velocity_last_10_min":0.1,"is_timer_event":false}
+{"user_id":"u123","event_time":"2026-03-10T10:25:00.000Z","bid_count":4,"bid_velocity_last_10_min":0.4,"is_timer_event":false}
+{"user_id":"u123","event_time":"2026-03-10T10:28:00.000Z","bid_count":5,"bid_velocity_last_10_min":0.5,"is_timer_event":false}
+{"user_id":"u456","event_time":"2026-03-10T10:29:00.000Z","bid_count":2,"bid_velocity_last_10_min":0.2,"is_timer_event":false}
+{"user_id":"u123","event_time":"2026-03-10T10:30:00.000Z","bid_count":6,"bid_velocity_last_10_min":0.6,"is_timer_event":false}
+{"user_id":"u123","event_time":"2026-03-10T10:31:00.000Z","bid_count":7,"bid_velocity_last_10_min":0.7,"is_timer_event":false}
+{"user_id":"u123","event_time":"2026-03-10T10:31:00.000Z","bid_count":6,"bid_velocity_last_10_min":0.6,"is_timer_event":true}
+{"user_id":"u456","event_time":"2026-03-10T10:31:30.000Z","bid_count":1,"bid_velocity_last_10_min":0.1,"is_timer_event":true}
