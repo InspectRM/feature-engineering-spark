@@ -59,6 +59,22 @@ This ensures the feature value is always up-to-date: it increases when new bids 
 ```
 
 ### How to Run
+
+```
+PS C:\CODE\class> docker compose exec spark-master bash -lc "
+>> mkdir -p /tmp/.ivy2 && \
+>> /opt/spark/bin/spark-submit \
+>> --master spark://spark-master:7077 \
+>> --deploy-mode client \
+>> --conf spark.jars.ivy=/tmp/.ivy2 \
+>> --conf spark.sql.streaming.stateStore.providerClass=org.apache.spark.sql.execution.streaming.state.RocksDBStateStoreProvider \
+>> --packages org.apache.spark:spark-sql-kafka-0-10_2.13:4.1.0 \
+>> --jars /opt/spark/jars/rocksdb-state-store_2.13-4.1.0.jar \
+>> /opt/spark/work-dir/main.py
+>> "
+```
+and 
+
 ```bash
 docker-compose up --build
 ```
