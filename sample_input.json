@@ -1,0 +1,5 @@
+{"event_type": "bid_placed", "user_id": "u123", "auction_id": "a456", "bid_amount": 150.00, "timestamp": "2026-03-10T10:21:00Z"}
+{"event_type": "bid_placed", "user_id": "u123", "auction_id": "a789", "bid_amount": 200.00, "timestamp": "2026-03-10T10:23:00Z"}
+{"event_type": "bid_cancelled", "user_id": "u123", "auction_id": "a456", "timestamp": "2026-03-10T10:24:00Z"}
+{"event_type": "bid_placed", "user_id": "u456", "auction_id": "a456", "bid_amount": 175.00, "timestamp": "2026-03-10T10:25:00Z"}
+{"event_type": "bid_placed", "user_id": "u123", "auction_id": "a456", "bid_amount": 300.00, "timestamp": "2026-03-10T10:27:00Z"}
