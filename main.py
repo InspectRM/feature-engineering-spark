@@ -58,12 +58,12 @@ class BidVelocityProcessor(StatefulProcessor):
     """
 
     def init(self, handle: StatefulProcessorHandle) -> None:
-        self.handle = handle
+        self.handle = handle # state
 
         # Running total of bids in the current window
         self._bidCount = handle.getValueState(
             "bidCount",
-            StructType([StructField("bid_count", LongType(), False)])
+            StructType([StructField("bid_count", LongType(), False)]) #string
         )
 
         # Map state: expiry timestamp -> number of bids expiring at that time
@@ -87,14 +87,14 @@ class BidVelocityProcessor(StatefulProcessor):
                 self.handle.registerTimer(expiry_ms)
                 is_timer_set = True
 
-            # Update per-time bucket contributions
+            # Update per-time bucket contributions "How many bids expire at this specific time?"
             if self._timersPerBidCount.containsKey(timer_key):
                 current_bucket_count = self._timersPerBidCount.getValue(timer_key)[0]
                 self._timersPerBidCount.updateValue(timer_key, (current_bucket_count + 1,))
             else:
                 self._timersPerBidCount.updateValue(timer_key, (1,))
 
-            # Update running total
+            # Update running total   "How many total bids does this user have in the 10-minute window right now?"
             old_bid_count = self._bidCount.get()[0] if self._bidCount.get() is not None else 0
             new_bid_count = old_bid_count + 1
             self._bidCount.update((new_bid_count,))
@@ -128,7 +128,7 @@ class BidVelocityProcessor(StatefulProcessor):
         # Subtract expired bids from running total
         new_bid_count = max(0, old_bid_count - expired_bid_count)
 
-        if new_bid_count != 0:
+        if new_bid_count != 0: # _bidCount 
             self._bidCount.update((new_bid_count,))
         else:
             self._bidCount.clear()
